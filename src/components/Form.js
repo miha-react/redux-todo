@@ -5,7 +5,6 @@ class Form extends React.Component {
      state = {
         title: ''
     };
-
     handleSubmit=(event)=> {
         event.preventDefault();
         const title = this.state.title;
@@ -14,7 +13,6 @@ class Form extends React.Component {
             this.setState({ title: '' });
         }
     };
-
     handleChange=(event)=> {
         const title = event.target.value;
         this.setState({ title });
@@ -39,5 +37,4 @@ class Form extends React.Component {
 Form.propTypes = {
     onAdd: PropTypes.func.isRequired
 };
-
 export default Form;

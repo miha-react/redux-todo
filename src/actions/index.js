@@ -11,7 +11,6 @@ export function addTodo(title){
         id: nextId++ , title
     };
 }
-
 export function deleteTodo (id){
     return{
         type: DELETE_TODO,
@@ -24,12 +23,10 @@ export function toggleTodo(id) {
         id
     }
 }
-
 export function editTodo(id, title){
     return {
         type: EDIT_TODO,
         id,
         title
     }
-
 }

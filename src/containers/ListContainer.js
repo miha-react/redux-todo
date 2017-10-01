@@ -4,7 +4,7 @@ import {deleteTodo, toggleTodo, editTodo} from '../actions';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-function maStateToProps(state) {
+function mapStateToProps(state) {
     return{
         todos: state
    }
@@ -23,7 +23,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
     onEdit: editTodo
 }, dispatch);
 
-const ListContainer = connect(maStateToProps, mapDispatchToProps)(List);
+const ListContainer = connect(mapStateToProps, mapDispatchToProps)(List);
 
 export default ListContainer;
 

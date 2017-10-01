@@ -2,12 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {createStore, applyMiddleware} from 'redux';
 import reducer from './reducers';
-// import todos from './todos';
 import App from './App';
 import {Provider} from 'react-redux';
-
-
-
 
 const loggerMW = store => next => action =>{
     console.log('-->', action);

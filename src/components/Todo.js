@@ -6,17 +6,9 @@ class Todo extends React.Component {
             editing: false
         };
 
-    componentDidUpdate=(prevProps, prevState)=> {
-        if (this.state.editing) {
-            this.refs.title.focus();
-        }
-    };
-
     handleSubmit = (event) => {
         event.preventDefault();
-
         const title = this.refs.title.value;
-
         this.props.onEdit(this.props.id, title);
         this.setState({ editing: false });
     };
@@ -48,7 +40,7 @@ class Todo extends React.Component {
     renderForm() {
         return (
             <form className="todo-edit-form" onSubmit={this.handleSubmit}>
-                <input type="text" ref="title" defaultValue={this.props.title} />
+                <input type="text" ref={(title)=>this.title = title} defaultValue={this.props.title} />
                 <button type="submit">Save</button>
             </form>
         );

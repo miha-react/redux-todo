@@ -1,6 +1,7 @@
 import {ADD_TODO, DELETE_TODO, EDIT_TODO, TOGGLE_TODO} from '../actions';
+import todos from '../todos';
 
-const reducer =(state = [], action)=>{
+const reducer =(state = todos, action)=>{
     switch (action.type){
         case ADD_TODO:
             const todo = {

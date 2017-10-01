@@ -2,30 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class Form extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            title: ''
-        };
-        this.store = this.props.store;
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-    }
+     state = {
+        title: ''
+    };
 
-    handleSubmit(event) {
+    handleSubmit=(event)=> {
         event.preventDefault();
         const title = this.state.title;
         if (title) {
             this.props.onAdd(title);
             this.setState({ title: '' });
         }
-    }
+    };
 
-    handleChange(event) {
+    handleChange=(event)=> {
         const title = event.target.value;
         this.setState({ title });
 
-    }
+    };
 
     render() {
         return (

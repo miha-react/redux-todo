@@ -2,45 +2,36 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class Todo extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
+    state = {
             editing: false
         };
 
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleDelete = this.handleDelete.bind(this);
-        this.handleToggle = this.handleToggle.bind(this);
-        this.handleEdit = this.handleEdit.bind(this);
-    }
-
-    componentDidUpdate(prevProps, prevState) {
+    componentDidUpdate=(prevProps, prevState)=> {
         if (this.state.editing) {
             this.refs.title.focus();
         }
-    }
+    };
 
-    handleSubmit(event) {
+    handleSubmit = (event) => {
         event.preventDefault();
 
         const title = this.refs.title.value;
 
         this.props.onEdit(this.props.id, title);
         this.setState({ editing: false });
-    }
+    };
 
-    handleDelete() {
+    handleDelete = () => {
         this.props.onDelete(this.props.id);
-    }
+    };
 
-    handleToggle() {
+    handleToggle = () => {
         this.props.onToggle(this.props.id);
-    }
+    };
 
-    handleEdit() {
+    handleEdit = () => {
         this.setState({ editing: true });
-    }
+    };
 
     renderDisplay() {
       return (
